@@ -25,8 +25,10 @@
     <br>
     <br>
     <mat-form-field style="width: 20rem;">
-        <mat-label>Full path to .xls or .xlsx Book file</mat-label>
+        <mat-label>Path to .xls or .xlsx Book file</mat-label>
         <input matInput [(ngModel)]="path" type="text">
     </mat-form-field>
     <button mat-raised-button (click)='import()'>Import</button>
+    <br><br>
+    <p>Za testiranje sam importovao isti fajl koji sam exportovao jer je on u odgovarajucem formatu (ExportedBooks.xls)</p>
 </div>
