@@ -38,4 +38,9 @@ export class LoginService {
     return this.http.get('http://localhost:8080/admin', {responseType: 'text'});
   }
 
+  register(username: string, password: string, role: string) {
+    let user = {'username': username, 'password': password, 'role': role};
+    return this.http.post('http://localhost:8080/register', user);
+  }
+
 }

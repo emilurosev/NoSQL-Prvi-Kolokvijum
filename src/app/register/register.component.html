@@ -1,0 +1,23 @@
+<div class="container">
+        <mat-form-field appearance="fill">
+            <mat-label>Username</mat-label>
+            <input matInput [(ngModel)]="username">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput [(ngModel)]="password" type="password">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Select role</mat-label>
+            <mat-select (selectionChange)="eventSelection($event)" [(ngModel)]="selectedValue">
+              <mat-option *ngFor="let r of allRoles" [value]="r">
+                {{r}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
+        <button mat-raised-button (click)='register()'>Register</button>
+    
+</div>

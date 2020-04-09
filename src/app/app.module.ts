@@ -18,13 +18,19 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MyHttpInterceptor } from './interceptor';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { BooksComponent } from './books/books.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { RegisterComponent } from './register/register.component';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SideNavComponent,
-    LoginComponent
+    LoginComponent,
+    BooksComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +47,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     FormsModule,
     MatButtonModule, 
     HttpClientModule,
-    MatTooltipModule
+    MatTooltipModule, 
+    MatSnackBarModule,
+    MatSelectModule
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: MyHttpInterceptor, multi: true}],
   bootstrap: [AppComponent]

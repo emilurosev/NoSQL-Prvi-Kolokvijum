@@ -26,20 +26,18 @@ export class SideNavComponent implements OnInit {
     this.jwt = localStorage.getItem('token');
     if(!this.jwt) {
       this.showLogoutButton = false;
+      
     }
     else {
       this.showLogoutButton = true;
     }
+  
   }
 
   logout() {
     localStorage.clear();
     this.router.navigate(['']);
     window.location.reload();
-  }
-
-  logged() {
-    return localStorage.getItem('token');
   }
 
 }
