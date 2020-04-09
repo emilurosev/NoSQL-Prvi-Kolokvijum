@@ -7,7 +7,7 @@
     <mat-nav-list>
       <a mat-list-item routerLink=''>Home</a>
       <a mat-list-item routerLink='books' *ngIf='showLogoutButton'>Books</a>
-      <a mat-list-item routerLink='register'>Register</a>
+      <a mat-list-item routerLink='register' *ngIf='roles.includes("ROLE_ADMIN")'>Register</a>
       <a mat-list-item routerLink='login' *ngIf='!showLogoutButton'>Login</a>
       <a mat-list-item (click)=logout() *ngIf='showLogoutButton'>Logout</a>
     </mat-nav-list>

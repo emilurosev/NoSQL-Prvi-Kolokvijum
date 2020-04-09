@@ -19,6 +19,7 @@ export class SideNavComponent implements OnInit {
 
   jwt: string;
   showLogoutButton: boolean;
+  roles: string[] = [];
 
   constructor(private breakpointObserver: BreakpointObserver, private router: Router) {}
   
@@ -26,12 +27,13 @@ export class SideNavComponent implements OnInit {
     this.jwt = localStorage.getItem('token');
     if(!this.jwt) {
       this.showLogoutButton = false;
-      
     }
     else {
       this.showLogoutButton = true;
     }
-  
+    if(localStorage.getItem('roles') !== null) {
+      this.roles = localStorage.getItem('roles').split(',');
+    }
   }
 
   logout() {

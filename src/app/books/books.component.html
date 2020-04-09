@@ -24,9 +24,9 @@
     <button mat-raised-button color='warn' (click)='delete()'>Empty table</button>
     <br>
     <br>
-    <mat-form-field>
-        <mat-label>Path</mat-label>
-        <input matInput [(ngModel)]="path">
+    <mat-form-field style="width: 20rem;">
+        <mat-label>Full path to .xls or .xlsx Book file</mat-label>
+        <input matInput [(ngModel)]="path" type="text">
     </mat-form-field>
     <button mat-raised-button (click)='import()'>Import</button>
 </div>

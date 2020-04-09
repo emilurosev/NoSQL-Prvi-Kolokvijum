@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../login.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-register',
@@ -13,7 +14,7 @@ export class RegisterComponent implements OnInit {
   allRoles = ["ADMIN", "USER"];
   selectedValue: string;
 
-  constructor(private ls: LoginService) { }
+  constructor(private ls: LoginService, private _snackBar: MatSnackBar) { }
 
   ngOnInit() {
   }
@@ -26,6 +27,7 @@ export class RegisterComponent implements OnInit {
           this.username = '';
           this.password = '';
           this.selectedValue = '';
+          this.openSnackBar();
         }, 1000)
       });
     }
@@ -37,6 +39,12 @@ export class RegisterComponent implements OnInit {
   eventSelection(event){
     this.selectedValue = event.value;
     console.log(this.selectedValue);
+  }
+
+  openSnackBar() {
+    this._snackBar.open("New user added", "", {
+      duration: 2000,
+    });
   }
 
 }
