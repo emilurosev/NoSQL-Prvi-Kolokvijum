@@ -2,8 +2,6 @@
     <h3 *ngIf='token == null'>Login as user with username: user & password: user</h3>
     <h3 *ngIf='token == null'>Login as admin with username: admin & password: admin</h3>
     <h3 *ngIf='roles.includes("ROLE_USER") && !roles.includes("ROLE_ADMIN")'>You are logged in as user</h3>
-    <h3 *ngIf='roles.includes("ROLE_USER") && roles.includes("ROLE_ADMIN")'>You are logged in as admin</h3>
+    <h3 *ngIf='roles.includes("ROLE_ADMIN")'>You are logged in as admin</h3>
     <p *ngIf='token !== null'>Lista knjiga se nalazi u Books sekciji</p>
-    <!-- <button mat-raised-button (click)='user()' *ngIf="roles.includes('ROLE_USER')" matTooltip='Ispisuje u konzolu odgovor sa @Secured funkcije samo za user-a'>User only secured function</button>
-    <button mat-raised-button (click)='admin()' *ngIf='roles.includes("ROLE_ADMIN")' matTooltip='Ispisuje u konzolu odgovor sa @Secured funkcije samo za admin-a, admin je ujedno i user'>Admin only secured function</button> -->
 </div>

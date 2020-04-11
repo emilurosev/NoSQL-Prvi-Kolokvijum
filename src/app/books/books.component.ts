@@ -17,7 +17,11 @@ export class BooksComponent implements OnInit {
   ngOnInit() {
     this.bs.getBooks().subscribe(res => {
       this.books = res;
+      for(var i = 0; i < this.books.length; i++) {
+        this.books[i].publicationDate = new Date(this.books[i].publicationDate);
+      }
     });
+    
   }
 
   export() {

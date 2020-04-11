@@ -43,4 +43,19 @@ export class LoginService {
     return this.http.post('http://localhost:8080/register', user);
   }
 
+  isLoggedIn() {
+    if(localStorage.getItem('token') !== null && localStorage.getItem('roles') !== null && localStorage.getItem('username') !== null) {
+      return true;
+    }
+    return false;
+  }
+
+  isAdmin() {
+    var roles: string[] = localStorage.getItem('roles').split(',');
+    if(localStorage.getItem('token') !== null && roles.includes('ROLE_ADMIN') && localStorage.getItem('username') !== null) {
+      return true;
+    }
+    return false;
+  }
+
 }

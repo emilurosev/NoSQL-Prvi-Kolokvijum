@@ -38,7 +38,6 @@ export class SideNavComponent implements OnInit {
 
   logout() {
     localStorage.clear();
-    this.router.navigate(['']);
     window.location.reload();
   }
 
